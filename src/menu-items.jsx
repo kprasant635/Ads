@@ -59,43 +59,59 @@ export default {
       ]
     },
     {
-      id: 'pages',
-      title: 'Pages',
-      caption: 'Prebuild Pages',
+      id: 'adsgroup',
+      title: 'Ads Group',
+      caption: 'Group',
       type: 'group',
       icon: icons['NavigationOutlinedIcon'],
       children: [
         {
-          id: 'sample-page',
-          title: 'Sample Page',
+          id: 'ads-group',
+          title: 'Ads Group',
           type: 'item',
-          url: '/sample-page',
-          icon: icons['ChromeReaderModeOutlinedIcon']
+          url: '/group-add',
+          icon: icons['GroupAdd']
         },
-        {
-          id: 'auth',
-          title: 'Authentication',
-          type: 'collapse',
-          icon: icons['SecurityOutlinedIcon'],
-          children: [
-            {
-              id: 'login-1',
-              title: 'Login',
-              type: 'item',
-              url: '/application/login',
-              target: true
-            },
-            {
-              id: 'register',
-              title: 'Register',
-              type: 'item',
-              url: '/application/register',
-              target: true
-            }
-          ]
-        }
       ]
     },
+    // {
+    //   id: 'pages',
+    //   title: 'Pages',
+    //   caption: 'Prebuild Pages',
+    //   type: 'group',
+    //   icon: icons['NavigationOutlinedIcon'],
+    //   children: [
+    //     {
+    //       id: 'sample-page',
+    //       title: 'Sample Page',
+    //       type: 'item',
+    //       url: '/sample-page',
+    //       icon: icons['ChromeReaderModeOutlinedIcon']
+    //     },
+    //     {
+    //       id: 'auth',
+    //       title: 'Authentication',
+    //       type: 'collapse',
+    //       icon: icons['SecurityOutlinedIcon'],
+    //       children: [
+    //         {
+    //           id: 'login-1',
+    //           title: 'Login',
+    //           type: 'item',
+    //           url: '/application/login',
+    //           target: true
+    //         },
+    //         {
+    //           id: 'register',
+    //           title: 'Register',
+    //           type: 'item',
+    //           url: '/application/register',
+    //           target: true
+    //         }
+    //       ]
+    //     }
+    //   ]
+    // },
     {
       id: 'utils',
       title: 'Utils',
@@ -120,34 +136,34 @@ export default {
         }
       ]
     },
-    {
-      id: 'support',
-      title: 'Support',
-      type: 'group',
-      icon: icons['ContactSupportOutlinedIcon'],
-      children: [
-        {
-          id: 'disabled-menu',
-          title: 'Disabled Menu',
-          type: 'item',
-          url: '#',
-          icon: icons['BlockOutlinedIcon'],
-          disabled: true
-        },
-        {
-          id: 'documentation',
-          title: 'Documentation',
-          type: 'item',
-          url: 'https://codedthemes.gitbook.io/materially-react-material-documentation/',
-          icon: icons['HelpOutlineOutlinedIcon'],
-          chip: {
-            label: 'Help?',
-            color: 'primary'
-          },
-          external: true,
-          target: true
-        }
-      ]
-    }
+    // {
+    //   id: 'support',
+    //   title: 'Support',
+    //   type: 'group',
+    //   icon: icons['ContactSupportOutlinedIcon'],
+    //   children: [
+    //     {
+    //       id: 'disabled-menu',
+    //       title: 'Disabled Menu',
+    //       type: 'item',
+    //       url: '#',
+    //       icon: icons['BlockOutlinedIcon'],
+    //       disabled: true
+    //     },
+    //     {
+    //       id: 'documentation',
+    //       title: 'Documentation',
+    //       type: 'item',
+    //       url: 'https://codedthemes.gitbook.io/materially-react-material-documentation/',
+    //       icon: icons['HelpOutlineOutlinedIcon'],
+    //       chip: {
+    //         label: 'Help?',
+    //         color: 'primary'
+    //       },
+    //       external: true,
+    //       target: true
+    //     }
+    //   ]
+    // }
   ]
 };

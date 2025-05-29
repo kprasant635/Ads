@@ -95,7 +95,7 @@ const SamplePage = () => {
   const [campaignToDelete, setCampaignToDelete] = useState(null); // State to hold campaign object for deletion
 
   // Dummy data for billing event and budget currency options
-  const billingEventOptions = ['TAPS', 'Impression', 'Click', 'Conversion'];
+  const billingEventOptions = ['TAPS'];
   const budgetCurrencyOptions = ['USD', 'EUR', 'GBP', 'JPY'];
 
   // Ref to store the latest accessToken, useful for interceptors and callbacks
@@ -412,8 +412,11 @@ const SamplePage = () => {
 
     setLoading(true);
     try {
+      // console.log(campaignToDelete.orgId);
+      // return;
+      
       // Assuming delete_campaign endpoint takes 'id' as a query parameter
-      const response = await axiosInstance.delete(`/delete_campaign?access_token=${accessTokenRef.current}&id=${campaignToDelete.id}`);
+      const response = await axiosInstance.delete(`/delete_campaign/${campaignToDelete.id}?access_token=${accessTokenRef.current}&orgId=${campaignToDelete.orgId}`);
       console.log('Campaign deleted successfully:', response.data);
       setSnackbarMessage('Campaign deleted successfully!');
       setSnackbarSeverity('success');
@@ -548,9 +551,9 @@ const SamplePage = () => {
                   Create Campaign
                 </Button>
                 {/* Button to manually trigger token refresh for debugging */}
-                <Button variant="outlined" onClick={refreshToken} sx={{ ml: 1 }}>
+                {/* <Button variant="outlined" onClick={refreshToken} sx={{ ml: 1 }}>
                   Force Token Refresh (Debug)
-                </Button>
+                </Button> */}
                 <TextField
                   label="Search Campaigns"
                   variant="outlined"
@@ -570,6 +573,7 @@ const SamplePage = () => {
                 <Table sx={{ minWidth: 900 }} aria-label="campaigns table">
                   <TableHead>
                     <TableRow>
+                      <TableCell>Campaign ID</TableCell>
                       <TableCell>Campaign Name</TableCell>
                       <TableCell align="right">Org ID</TableCell>
                       <TableCell align="right">Adam ID</TableCell>
@@ -593,6 +597,7 @@ const SamplePage = () => {
                     ) : filteredCampaigns.length > 0 ? (
                       filteredCampaigns.map((campaign) => (
                         <TableRow key={campaign.id}>
+                          <TableCell>{campaign.id}</TableCell>
                           <TableCell>{campaign.name}</TableCell>
                           <TableCell align="right">{campaign.orgId}</TableCell>
                           <TableCell align="right">{campaign.adamId}</TableCell>

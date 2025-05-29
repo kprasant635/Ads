@@ -12,22 +12,8 @@ const NavCard = () => {
       <CardContent>
         <Stack alignItems="center" spacing={2.5}>
           <CardMedia component="img" image={avatar} sx={{ width: 112 }} />
-          <Stack alignItems="center">
-            <Typography variant="h5">Materially Pro</Typography>
-            <Typography variant="h6" color="secondary" textAlign="center">
-              Checkout Materially Premium Features
-            </Typography>
-          </Stack>
-          <Button
-            component={Link}
-            target="_blank"
-            href="https://codedthemes.com/item/materially-reactjs-admin-dashboard/?utm_source=free_demo&utm_medium=codedthemes&utm_campaign=button_download_premium"
-            variant="contained"
-            color="primary"
-            size="small"
-          >
-            Download Premium
-          </Button>
+        
+          
         </Stack>
       </CardContent>
     </Card>
